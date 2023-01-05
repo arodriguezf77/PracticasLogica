@@ -1,0 +1,49 @@
+<html>
+    <body>
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");        
+
+    function creeper(x,y,w,z){
+      //Cabeza
+	pincel.fillStyle = "darkgreen"; //propiedad
+	pincel.fillRect(200,50,350,300);  //función
+
+//OJOS
+    pincel.fillStyle = "black" //propiedad
+	pincel.fillRect(250,110,90,90);  //función
+    pincel.fillRect(410,110,90,90);  
+
+//NARIZ
+	pincel.fillRect(340,200,70,100);  //función
+
+//BOCA
+    pincel.fillRect(300,240,40,110);  //función
+    pincel.fillRect(410,240,40,110);  
+    }    
+
+    function limpiarPantalla(){
+
+        pincel.clearRect(0,0,600,400);
+
+    }
+
+    var x = 0
+    var sentido = 1;
+
+    function actualizarPantalla(){
+
+        limpiarPantalla();
+        creeper(x,20,10,10);
+        x++;
+    }
+
+    setInterval(actualizarPantalla,100);
+
+</script> 
+
+</body>
+</html>
